@@ -55,22 +55,28 @@ const Homepage = () => {
   };
 
   return (
-    <div className="p-6 text-center bg-emerald-400 min-h-screen flex flex-col items-center">
-      <h1 className="text-3xl font-bold mb-6">🎲 Amphibia Memory Game</h1>
+    <div className="p-6 text-center bg-black min-h-screen flex flex-col items-center">
+      <h1 className="text-3xl font-bold mb-6 text-white">
+        🎲 Amphibia Memory Game
+      </h1>
 
       <div className="mb-6">
-        <span className="text-lg font-semibold mr-4">Score: {score}</span>
-        <span className="text-lg font-semibold">Best Score: {bestScore}</span>
+        <span className="text-lg font-semibold mr-4 text-white">
+          Score: {score}
+        </span>
+        <span className="text-lg font-semibold text-white">
+          Best Score: {bestScore}
+        </span>
       </div>
 
       <div className="flex gap-3 flex-wrap justify-center items-center lg:gap-7">
         {gifs.length === 0 ? (
-          <p>Loading...</p>
+          <p className="text-white">Loading...</p>
         ) : (
           gifs.map((gif) => (
             <button
               key={gif.uniqueId}
-              className="focus:outline-none rounded-md hover:scale-105 transition-transform hover:border-blue-500 hover:shadow-lg hover:shadow-blue-400"
+              className="focus:outline-none rounded-md hover:scale-105 transition-transform hover:border-white hover:shadow-lg hover:shadow-white/30"
               onClick={() => handleClick(gif.id)}
             >
               <img
@@ -78,7 +84,7 @@ const Homepage = () => {
                 src={gif.images.fixed_height.url}
                 alt={gif.title || "Random Gif"}
               />
-              <p className="text-sm text-black">{gif.title || "Random Gif"}</p>
+              <p className="text-sm text-white">{gif.title || "Random Gif"}</p>
             </button>
           ))
         )}
